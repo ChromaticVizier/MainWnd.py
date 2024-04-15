@@ -12,6 +12,7 @@ import MainWnd
 from GenUsers import GenUsers
 import configparser
 
+# push test
 
 def close_welcome(thread1, thread2, wnd):  # 等待准备工作完成然后关闭欢迎窗口
     thread1.start()
