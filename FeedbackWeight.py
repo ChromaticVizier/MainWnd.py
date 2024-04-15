@@ -2,7 +2,7 @@
 """
 根据反馈参数（点赞量、分享量、评论量占观看量占比）计算全局权重
 """
-#asdfghjkl
+
 
 # 提供计算权重外壳
 class FeedbackWeight:
