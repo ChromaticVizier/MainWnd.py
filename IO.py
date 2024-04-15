@@ -46,8 +46,7 @@ def WriteToMemory(data):
             comment=int(row['comment']),
             share=int(row['share']),
             watch=int(row['watch']),
-            coin=int(row['column'])  # 有辛csv后替换
-            # coin=0
+            coin=int(row['column'])
         )
         user_id_list = str(row['user_list']).split(';')
 
