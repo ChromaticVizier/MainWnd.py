@@ -1,7 +1,7 @@
 # 最小观看时长判定
 min_len = 0  # 待定
 
-
+#asdfghjkl
 # 点击判断是否观看
 def click(user, video, stay_len: float, is_like: bool, iscomment: bool, is_share: bool):
     if stay_len > min_len:  # 若观看则更新信息
