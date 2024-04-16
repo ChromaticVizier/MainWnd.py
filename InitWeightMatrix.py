@@ -12,22 +12,25 @@ class InitWeight:
         self.weight1 = np.ones((10, 5))  # 10行5列
         self.weight2 = np.ones((10, 2))
         self.weight3 = np.ones((10, 6))
-        self.weightList = [self.weight1, self.weight2, self.weight3]
+        self.weight4 = np.ones((10, 2))
+        self.weightList = [self.weight1, self.weight2, self.weight3, self.weight4]
 
     # 获得类别权重
-    def GetInitWeight(self, category, work_phase, gender, job):
+    def GetInitWeight(self, category, work_phase, gender, job, location):
         weight = 1
         weight *= (self.weightList[0])[category][work_phase]
         weight *= (self.weightList[1])[category][gender]
         weight *= (self.weightList[2])[category][job]
+        weight *= (self.weightList[3])[category][location]
         return weight
 
     # 更新初始权重
-    def UpdateInitWeight(self, category, work_phase, gender, job):
+    def UpdateInitWeight(self, category, work_phase, gender, job, location):
         from GlobalVariable import global_obj
         base_cut = 0.005  # 将观看数规模缩减后进行比较
         delta = 1 / (global_obj.GetTotalUserCount() * base_cut)
         self.weight1[category][work_phase] += delta
         self.weight2[category][gender] += delta
         self.weight3[category][job] += delta
+        self.weight4[category][location] += delta
 

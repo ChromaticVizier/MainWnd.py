@@ -45,7 +45,7 @@ class Ui_AnalysisWnd(object):
         QtCore.QMetaObject.connectSlotsByName(AnalysisWnd)
 
         #  初始化下拉列表
-        self.comboBox.addItems(['工作阶段', '性别', '职业类型'])
+        self.comboBox.addItems(['工作阶段', '性别', '职业类型', '地域'])
 
     def retranslateUi(self, AnalysisWnd):
         _translate = QtCore.QCoreApplication.translate
@@ -76,6 +76,13 @@ class Ui_AnalysisWnd(object):
             self.model_analysis.setHorizontalHeaderLabels(['老师', '学生', '程序员', '工程师', '网络主播', '其他'])
             vl = init_weight.weight3
             col = 6
+
+        elif sel == 3:
+            self.model_analysis = QStandardItemModel(10, 2)
+            self.model_analysis.setHorizontalHeaderLabels(['南方', '北方'])
+            vl = init_weight.weight4
+            col = 2
+
         else:
             print('fatal failed')
             return
