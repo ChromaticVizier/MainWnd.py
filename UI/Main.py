@@ -7,7 +7,8 @@ sys.path.append(os.path.abspath(os.path.dirname(os.getcwd()) + os.path.sep + "."
 import IO
 import time
 from PyQt5 import QtWidgets
-import welcome
+# import welcome
+import welcome_new
 import MainWnd
 from GenUsers import GenUsers
 import configparser
@@ -35,7 +36,8 @@ if __name__ == '__main__':
 
     th3 = threading.Thread(target=close_welcome, args=(th1, th2, widget_wel))
 
-    welcome_wnd = welcome.Ui_Welcome()
+    # welcome_wnd = welcome.Ui_Welcome()
+    welcome_wnd = welcome_new.Ui_Welcome()
     welcome_wnd.setupUi(widget_wel)
     widget_wel.show()
     from ReloadIcon import SetWndIcon
