@@ -6,72 +6,180 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>346</width>
-    <height>370</height>
+    <width>591</width>
+    <height>591</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>短视频推荐系统 &amp; By Krxk</string>
+   <string>短视频推荐系统_登录</string>
   </property>
-  <widget class="QPushButton" name="UL">
+  <widget class="QGraphicsView" name="graphicsView">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>30</y>
-     <width>241</width>
-     <height>81</height>
+     <x>0</x>
+     <y>0</y>
+     <width>591</width>
+     <height>591</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>隶书</family>
-     <pointsize>22</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>用户登录</string>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/imagees/background3.png);</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="VL">
+  <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>20</x>
      <y>130</y>
-     <width>241</width>
-     <height>91</height>
+     <width>560</width>
+     <height>291</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>隶书</family>
-     <pointsize>22</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>视频登录</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="Analysis">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>250</y>
-     <width>241</width>
-     <height>91</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>隶书</family>
-     <pointsize>22</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>统计分析</string>
-   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>180</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/imagees/pic2.png);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="UL">
+        <property name="font">
+         <font>
+          <family>隶书</family>
+          <pointsize>22</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>用户登录</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>180</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/imagees/pic1.png);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="VL">
+        <property name="font">
+         <font>
+          <family>隶书</family>
+          <pointsize>22</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>视频登录</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>180</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/imagees/pic3.png);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Analysis">
+        <property name="font">
+         <font>
+          <family>隶书</family>
+          <pointsize>22</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>统计分析</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="pic.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>UL</sender>

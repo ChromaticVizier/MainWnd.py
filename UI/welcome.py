@@ -48,10 +48,10 @@ class Ui_Welcome(object):
 
     def retranslateUi(self, Welcome):
         _translate = QtCore.QCoreApplication.translate
-        Welcome.setWindowTitle(_translate("Welcome", "欢迎页 && By Krxk"))
+        Welcome.setWindowTitle(_translate("Welcome", "欢迎页"))
         self.label.setText(_translate("Welcome", "欢迎使用短视频推荐系统"))
-        self.label_2.setText(_translate("Welcome", "核心开发者：黎斌雄"))
-        self.label_3.setText(_translate("Welcome", "正在为您加载核心数据......"))
+        #self.label_2.setText(_translate("Welcome", "核心开发者：黎斌雄"))
+        self.label_3.setText(_translate("Welcome", "正在为您加载核心数据"))
 
         frame = QImage("core_developer.jpg")
         pix = QPixmap.fromImage(frame)

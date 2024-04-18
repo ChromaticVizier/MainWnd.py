@@ -2,12 +2,23 @@
 import os.path
 import sys
 
+
 sys.path.append(os.path.abspath(os.path.dirname(os.getcwd()) + os.path.sep + "."))  # 配置项目路径变量
 
 import IO
 import time
 from PyQt5 import QtWidgets
-import welcome
+
+from PyQt5 import QtCore
+QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
+
+
+import ui_welcome
+import ui_MainWnd
+
+#/////////////////
+
+#import welcome
 import MainWnd
 from GenUsers import GenUsers
 import configparser
@@ -35,7 +46,7 @@ if __name__ == '__main__':
 
     th3 = threading.Thread(target=close_welcome, args=(th1, th2, widget_wel))
 
-    welcome_wnd = welcome.Ui_Welcome()
+    welcome_wnd = ui_welcome.Ui_Welcome()
     welcome_wnd.setupUi(widget_wel)
     widget_wel.show()
     from ReloadIcon import SetWndIcon
@@ -50,7 +61,7 @@ if __name__ == '__main__':
 
     #  进入主界面
     widget = QtWidgets.QWidget()
-    main_wnd = MainWnd.Ui_MainWnd()
+    main_wnd = ui_MainWnd.Ui_MainWnd()
     main_wnd.setupUi(widget)
     widget.show()
 
