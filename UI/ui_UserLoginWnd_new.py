@@ -8,12 +8,14 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QStringListModel
 
+
 class Ui_UserLoginWnd(object):
     def setupUi(self, UserLoginWnd):
         UserLoginWnd.setObjectName("UserLoginWnd")
         UserLoginWnd.resize(900, 800)
         UserLoginWnd.setMinimumSize(QtCore.QSize(900, 800))
-        self.listToPlay = QtWidgets.QListWidget(UserLoginWnd)
+        # self.listToPlay = QtWidgets.QListWidget(UserLoginWnd)
+        self.listToPlay = QtWidgets.QListView(UserLoginWnd)
         self.listToPlay.setGeometry(QtCore.QRect(10, 350, 381, 331))
         self.listToPlay.setMinimumSize(QtCore.QSize(1, 0))
         font = QtGui.QFont()

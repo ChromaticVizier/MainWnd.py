@@ -124,6 +124,7 @@ class Ui_UserLoginWnd(object):
         self.cur_user = global_obj.GlobalUserList[self.query_uid]
 
         self.cur_user.HelpRefreshWeight()
+        print('==================')
         self.cur_user.RefreshWeight()
 
         self.playItems = []  # 先清空

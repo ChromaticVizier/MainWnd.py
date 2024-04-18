@@ -98,6 +98,7 @@ class User:
                 break
         VideoListSort(self.temp_play_list)
 
+    @TimeTest.Krxk_Clock
     def RefreshWeight(self):  # 刷新播放列表
         self.to_play_list = None  # 释放内存
         self.to_play_list = self.temp_play_list
