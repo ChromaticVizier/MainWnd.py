@@ -4,8 +4,6 @@
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
-# WARNING: Any manual changes made to this file will be lost when pyuic5 is
-
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
