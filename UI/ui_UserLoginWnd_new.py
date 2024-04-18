@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'UserLoginWnd_new.ui'
 #
-# Created by: PyQt5 UI code generator 5.15.9
+# Created by: PyQt5 UI code generator 5.15.
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
