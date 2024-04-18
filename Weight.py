@@ -20,7 +20,7 @@ class Weight:
         user = self.user
         fb_weight_obj = FeedbackWeight.FeedbackWeight(video)
 
-        weight = (self.init_weight_obj.GetInitWeight(video.category, user.work_phase, user.gender, user.job) *
+        weight = (self.init_weight_obj.GetInitWeight(video.category, user.work_phase, user.gender, user.job, user.location) *
                   self.ex_weight_obj.GetExWeight(video) * fb_weight_obj.take_result_percent())
 
         if video.hot:

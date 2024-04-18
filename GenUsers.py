@@ -33,7 +33,7 @@ def HelpGenUsers(start_uid, end_uid):
     from User import User
     import random
     for i in range(start_uid, end_uid):
-        user = User(random.randint(0, 4), random.randint(0, 1), random.randint(0, 5), i)
+        user = User(random.randint(0, 4), random.randint(0, 1), random.randint(0, 5), random.randint(0, 1), i)
         for j in range(100):
             user.video_list[random.randint(0, 9)].append([random.randint(1, testVideos), 1, 1])
         global_obj.add_user_to_list(user, True)

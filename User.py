@@ -24,6 +24,9 @@ class User:
     # 0-老师，1-学生，2-程序员，3-工程师，4-网络主播，5-其他
     job: int = None
     # uid
+
+    location: int = None
+
     uid: int = None
     # 观看视频总数
     num_of_video: int = 0
@@ -34,14 +37,14 @@ class User:
     video_list = [[], [], [], [], [], [], [], [], [], []]
 
     # 取代已观看历史结构，其中元素为视频uid
-
     # 创建新用户
-    def __init__(self, work_phase: int, gender: int, job: int, uid: int):
+    def __init__(self, work_phase: int, gender: int, job: int, location: int, uid: int):
         import numpy as np
         from GlobalVariable import refresh_frequency
         self.work_phase = work_phase
         self.gender = gender
         self.job = job
+        self.location = location
         self.uid = uid
         self.weight_obj = Weight.Weight(self, global_obj.InitWeight)
         self.temp_play_list = None  # 临时播放列表
@@ -100,4 +103,4 @@ class User:
         self.to_play_list = self.temp_play_list
 
     def HelpUpdateInitWeight(self, category):  # 辅助函数
-        global_obj.InitWeight.UpdateInitWeight(category, self.work_phase, self.gender, self.job)
+        global_obj.InitWeight.UpdateInitWeight(category, self.work_phase, self.gender, self.job, self.location)
