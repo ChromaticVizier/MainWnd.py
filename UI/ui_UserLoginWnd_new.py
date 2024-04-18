@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'UserLoginWnd_new.ui'
-
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QStringListModel
