@@ -16,7 +16,7 @@ QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
 import ui_welcome
 import ui_MainWnd
 
-#/////////////////
+#////////////////
 
 #import welcome
 import MainWnd
