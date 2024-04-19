@@ -9,10 +9,10 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import UserLoginWnd_new
+import ui_UserLoginWnd_new
 # import UserLoginWnd
-import VideoLoginWnd
-import AnalysisWnd
+import ui_VideoLoginWnd
+import ui_AnalysisWnd
 
 
 class Ui_MainWnd(object):
