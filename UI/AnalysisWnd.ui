@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>614</width>
-    <height>610</height>
+    <width>570</width>
+    <height>567</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,54 +16,90 @@
   <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>170</y>
+     <x>10</x>
+     <y>90</y>
      <width>551</width>
      <height>411</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(165, 165, 165);</string>
    </property>
   </widget>
   <widget class="QComboBox" name="comboBox">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>30</y>
-     <width>271</width>
+     <x>140</x>
+     <y>20</y>
+     <width>131</width>
      <height>51</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>隶书</family>
-     <pointsize>14</pointsize>
+     <family>黑体</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(179, 179, 179);
+font: 16pt &quot;黑体&quot;;</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>工作阶段</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>职业</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>性别</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>地域</string>
+    </property>
+   </item>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>30</y>
-     <width>271</width>
+     <y>20</y>
+     <width>101</width>
      <height>51</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>隶书</family>
-     <pointsize>20</pointsize>
+     <family>黑体</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 16pt &quot;黑体&quot;;</string>
+   </property>
    <property name="text">
-    <string>请选择分析维度：</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#c7b420;&quot;&gt;分析维度：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="RunAnalysis">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>100</y>
-     <width>551</width>
+     <x>280</x>
+     <y>20</y>
+     <width>51</width>
      <height>51</height>
     </rect>
    </property>
@@ -73,12 +109,35 @@
      <pointsize>24</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/imagees/pic10.png);</string>
+   </property>
    <property name="text">
-    <string>启动分析引擎</string>
+    <string/>
    </property>
   </widget>
+  <widget class="QGraphicsView" name="graphicsView">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>571</width>
+     <height>571</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/imagees/background3.png);</string>
+   </property>
+  </widget>
+  <zorder>graphicsView</zorder>
+  <zorder>tableView</zorder>
+  <zorder>comboBox</zorder>
+  <zorder>label</zorder>
+  <zorder>RunAnalysis</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="pic.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>RunAnalysis</sender>

@@ -12,8 +12,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import ui_UserLoginWnd_new
 
 # import UserLoginWnd
-import VideoLoginWnd
-import AnalysisWnd
+import ui_VideoLoginWnd
+import ui_AnalysisWnd
 
 class Ui_MainWnd(object):
     def setupUi(self, MainWnd):
@@ -108,7 +108,7 @@ class Ui_MainWnd(object):
 
     def VideoLogin(self):
         self.widget_video = QtWidgets.QWidget()
-        self.video_login_wnd = VideoLoginWnd.Ui_VideoLoginWnd()
+        self.video_login_wnd = ui_VideoLoginWnd.Ui_VideoLoginWnd()
         self.video_login_wnd.setupUi(self.widget_video)
         from ReloadIcon import SetWndIcon
         SetWndIcon(self.widget_video)
@@ -116,7 +116,7 @@ class Ui_MainWnd(object):
 
     def AnalysisFun(self):
         self.widget_analysis = QtWidgets.QWidget()
-        self.analysis_wnd = AnalysisWnd.Ui_AnalysisWnd()
+        self.analysis_wnd = ui_AnalysisWnd.Ui_AnalysisWnd()
         self.analysis_wnd.setupUi(self.widget_analysis)
         from ReloadIcon import SetWndIcon
         SetWndIcon(self.widget_analysis)

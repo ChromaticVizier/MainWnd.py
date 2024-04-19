@@ -9,74 +9,166 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from PyQt5.QtCore import QStringListModel
 
 class Ui_VideoLoginWnd(object):
     def setupUi(self, VideoLoginWnd):
         VideoLoginWnd.setObjectName("VideoLoginWnd")
-        VideoLoginWnd.resize(881, 701)
+        VideoLoginWnd.resize(713, 505)
         self.label = QtWidgets.QLabel(VideoLoginWnd)
-        self.label.setGeometry(QtCore.QRect(30, 50, 221, 31))
+        self.label.setGeometry(QtCore.QRect(20, 30, 101, 41))
         font = QtGui.QFont()
-        font.setFamily("隶书")
+        font.setFamily("Adobe Heiti Std")
         font.setPointSize(16)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.label.setFont(font)
+        self.label.setStyleSheet("font: 9pt \"黑体\";\n"
+"font: 16pt \"Adobe Heiti Std\";")
         self.label.setObjectName("label")
         self.textEdit = QtWidgets.QTextEdit(VideoLoginWnd)
-        self.textEdit.setGeometry(QtCore.QRect(270, 40, 221, 41))
+        self.textEdit.setGeometry(QtCore.QRect(120, 30, 221, 51))
+        self.textEdit.setStyleSheet("background-color: rgb(180, 180, 180);\n"
+"font: 18pt \"黑体\";")
         self.textEdit.setObjectName("textEdit")
         self.Query = QtWidgets.QPushButton(VideoLoginWnd)
-        self.Query.setGeometry(QtCore.QRect(520, 40, 131, 41))
+        self.Query.setGeometry(QtCore.QRect(340, 30, 41, 41))
         font = QtGui.QFont()
         font.setFamily("隶书")
         font.setPointSize(22)
         self.Query.setFont(font)
+        self.Query.setStyleSheet("border-image: url(:/imagees/pic4.png);")
+        self.Query.setText("")
         self.Query.setObjectName("Query")
         self.listView = QtWidgets.QListView(VideoLoginWnd)
-        self.listView.setGeometry(QtCore.QRect(30, 140, 401, 541))
+        self.listView.setGeometry(QtCore.QRect(20, 160, 401, 311))
         font = QtGui.QFont()
         font.setFamily("宋体")
         font.setPointSize(14)
         self.listView.setFont(font)
+        self.listView.setStyleSheet("background-color: rgb(136, 136, 136);")
         self.listView.setObjectName("listView")
         self.listView_2 = QtWidgets.QListView(VideoLoginWnd)
-        self.listView_2.setGeometry(QtCore.QRect(450, 140, 401, 541))
+        self.listView_2.setGeometry(QtCore.QRect(470, 60, 221, 421))
         font = QtGui.QFont()
         font.setFamily("宋体")
         font.setPointSize(14)
         self.listView_2.setFont(font)
+        self.listView_2.setStyleSheet("background-color: rgb(149, 149, 149);")
         self.listView_2.setObjectName("listView_2")
         self.label_2 = QtWidgets.QLabel(VideoLoginWnd)
-        self.label_2.setGeometry(QtCore.QRect(130, 100, 181, 31))
+        self.label_2.setGeometry(QtCore.QRect(140, 120, 91, 31))
         font = QtGui.QFont()
-        font.setFamily("隶书")
+        font.setFamily("黑体")
         font.setPointSize(16)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.label_2.setFont(font)
+        self.label_2.setStyleSheet("font: 16pt \"黑体\";")
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(VideoLoginWnd)
-        self.label_3.setGeometry(QtCore.QRect(590, 100, 151, 31))
+        self.label_3.setGeometry(QtCore.QRect(470, 30, 151, 31))
         font = QtGui.QFont()
-        font.setFamily("隶书")
+        font.setFamily("黑体")
         font.setPointSize(16)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.label_3.setFont(font)
+        self.label_3.setStyleSheet("font: 16pt \"黑体\";")
         self.label_3.setObjectName("label_3")
         self.Query_2 = QtWidgets.QPushButton(VideoLoginWnd)
-        self.Query_2.setGeometry(QtCore.QRect(670, 40, 171, 41))
+        self.Query_2.setGeometry(QtCore.QRect(240, 110, 171, 41))
         font = QtGui.QFont()
-        font.setFamily("隶书")
-        font.setPointSize(22)
+        font.setFamily("黑体")
+        font.setPointSize(16)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.Query_2.setFont(font)
+        self.Query_2.setStyleSheet("font: 16pt \"黑体\";\n"
+"background-color: rgb(88, 88, 88);")
         self.Query_2.setObjectName("Query_2")
+        self.graphicsView = QtWidgets.QGraphicsView(VideoLoginWnd)
+        self.graphicsView.setGeometry(QtCore.QRect(-5, 1, 721, 511))
+        self.graphicsView.setStyleSheet("border-image: url(:/imagees/background3.png);")
+        self.graphicsView.setObjectName("graphicsView")
+        self.graphicsView_2 = QtWidgets.QGraphicsView(VideoLoginWnd)
+        self.graphicsView_2.setGeometry(QtCore.QRect(20, 70, 401, 281))
+        self.graphicsView_2.setStyleSheet("background-image: url(:/imagees/background3.png);")
+        self.graphicsView_2.setObjectName("graphicsView_2")
+        self.graphicsView_3 = QtWidgets.QGraphicsView(VideoLoginWnd)
+        self.graphicsView_3.setGeometry(QtCore.QRect(30, 80, 101, 71))
+        self.graphicsView_3.setAutoFillBackground(False)
+        self.graphicsView_3.setStyleSheet("border-image: url(:/imagees/pic9.png);")
+        self.graphicsView_3.setObjectName("graphicsView_3")
+        self.graphicsView_4 = QtWidgets.QGraphicsView(VideoLoginWnd)
+        self.graphicsView_4.setGeometry(QtCore.QRect(580, 20, 31, 31))
+        self.graphicsView_4.setStyleSheet("border-image: url(:/imagees/pic2.png);")
+        self.graphicsView_4.setObjectName("graphicsView_4")
+        self.graphicsView_5 = QtWidgets.QGraphicsView(VideoLoginWnd)
+        self.graphicsView_5.setGeometry(QtCore.QRect(610, 20, 31, 31))
+        self.graphicsView_5.setStyleSheet("border-image: url(:/imagees/pic2.png);")
+        self.graphicsView_5.setObjectName("graphicsView_5")
+        self.graphicsView_6 = QtWidgets.QGraphicsView(VideoLoginWnd)
+        self.graphicsView_6.setGeometry(QtCore.QRect(640, 20, 31, 31))
+        self.graphicsView_6.setStyleSheet("border-image: url(:/imagees/pic2.png);")
+        self.graphicsView_6.setObjectName("graphicsView_6")
+        self.graphicsView.raise_()
+        self.Query.raise_()
+        self.textEdit.raise_()
+        self.graphicsView_2.raise_()
+        self.label.raise_()
+        self.listView.raise_()
+        self.listView_2.raise_()
+        self.label_2.raise_()
+        self.label_3.raise_()
+        self.Query_2.raise_()
+        self.graphicsView_3.raise_()
+        self.graphicsView_4.raise_()
+        self.graphicsView_5.raise_()
+        self.graphicsView_6.raise_()
 
         self.retranslateUi(VideoLoginWnd)
-        self.Query.clicked.connect(VideoLoginWnd.close) # type: ignore
+        self.Query.clicked.connect(self.OnQuery)  # type: ignore
+        self.Query_2.clicked.connect(self.OnShiftHot)
         QtCore.QMetaObject.connectSlotsByName(VideoLoginWnd)
 
     def retranslateUi(self, VideoLoginWnd):
         _translate = QtCore.QCoreApplication.translate
         VideoLoginWnd.setWindowTitle(_translate("VideoLoginWnd", "视频查询"))
-        self.label.setText(_translate("VideoLoginWnd", "请输入视频 uid:"))
-        self.Query.setText(_translate("VideoLoginWnd", "查询"))
-        self.label_2.setText(_translate("VideoLoginWnd", "视频统计信息"))
-        self.label_3.setText(_translate("VideoLoginWnd", "已观看用户"))
+        self.label.setText(_translate("VideoLoginWnd", "<html><head/><body><p><span style=\" font-size:20pt; color:#d6ba1c;\">视频ID:</span></p></body></html>"))
+        self.label_2.setText(_translate("VideoLoginWnd", "<html><head/><body><p><span style=\" color:#cbb11f;\">视频详情</span></p></body></html>"))
+        self.label_3.setText(_translate("VideoLoginWnd", "<html><head/><body><p><span style=\" color:#cfbf10;\">已观看用户</span></p></body></html>"))
         self.Query_2.setText(_translate("VideoLoginWnd", "设为热点"))
+    def OnQuery(self):
+        from GlobalVariable import global_obj
+        video_uid = int(self.textEdit.toPlainText())
+        video = global_obj.GlobalVideoList[video_uid - 1]
+        self.cur_video = video  # 保存
+        self.model_info = QStringListModel()
+        self.listView.setModel(self.model_info)
+
+        self.video_info = ['视频类别： ' + str(video.category), '视频标题: ' + video.name, '播放量： ' + str(video.watch),
+                               '点赞量： ' + str(video.like), '评论数： ' + str(video.comment), '分享量：' + str(video.share),
+                           '是否热点： ' + str(video.hot), '视频长度： ' + str(video.length), '投币数： ' + str(video.coin)]
+        self.model_info.setStringList(self.video_info)
+        self.history_users = []
+        for user_uid in video.user_list:
+            self.history_users.append(str(user_uid))
+        self.model_history_users = QStringListModel()
+        self.model_history_users.setStringList(self.history_users)
+        self.listView_2.setModel(self.model_history_users)
+
+        print('视频查询')
+
+    def OnShiftHot(self):
+        if self.cur_video.hot:
+            self.cur_video.hot = False
+        else:
+            self.cur_video.hot = True
+        print('热点状态切换，当前状态： ', str(self.cur_video.hot))
+
+import pic_rc
