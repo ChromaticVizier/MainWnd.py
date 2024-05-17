@@ -14,18 +14,18 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
 
 
-        self.listView = QtWidgets.QListView(self.centralwidget)
+        self.listView = QtWidgets.QTextEdit(self.centralwidget)
         self.listView.setGeometry(QtCore.QRect(310, 10, 581, 441))
         self.listView.setObjectName("listView")
 
 
-        self.user_cluster = QtWidgets.QPushButton(self.centralwidget)
+        self.user_cluster = QtWidgets.QPushButton(MainWindow)
         self.user_cluster.setGeometry(QtCore.QRect(10, 60, 291, 91))
         self.user_cluster.setStyleSheet("<p>text</p>")
         self.user_cluster.setObjectName("pushButton")
 
 
-        self.video_cluster = QtWidgets.QPushButton(self.centralwidget)
+        self.video_cluster = QtWidgets.QPushButton(MainWindow)
         self.video_cluster.setGeometry(QtCore.QRect(10, 160, 291, 91))
         self.video_cluster.setObjectName("pushButton_2")
 
@@ -35,7 +35,7 @@ class Ui_MainWindow(object):
         self.video_predict.setObjectName("pushButton_3")
 
 
-        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit = QtWidgets.QLineEdit(MainWindow)
         self.lineEdit.setGeometry(QtCore.QRect(10, 9, 291, 41))
         self.lineEdit.setObjectName("lineEdit")
 
@@ -51,6 +51,10 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.user_cluster.clicked.connect(self.user_clu)
+        self.video_cluster.clicked.connect(self.video_clu)
+
+        self.video_predict.clicked.connect(self.video_pre)
+
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -64,16 +68,34 @@ class Ui_MainWindow(object):
         for user in user_list:
             for video_class in user.video_list:
                 sum_screen_time = 0
-                for video in video_class.video_list:
+                for video in video_class:
                     sum_screen_time += video[1]
                 user.prefer_list.append(sum_screen_time)
 
-            favourite = max(user.prefer_list)
-            global_obj.user_cluster_list[favourite].append(user.uid)
+            user.favourite = user.prefer_list.index(max(user.prefer_list))
 
-        slm = QStringListModel()
-        slm.setStringList(global_obj.user_cluster_list)
-        self.listView.setModel(slm)
+        query_uid = int(self.lineEdit.text())
+        same_hobby_list = []
+
+        for user in user_list:
+            # if user.favourite == user_list[query_uid].favourite:
+            if user.favourite == user_list[query_uid].favourite and user.favourite != 0:
+                same_hobby_list.append(user)
+
+        self.listView.setPlainText(str(same_hobby_list))
+
+    def video_clu(self):
+        video_uid = int(self.lineEdit.text())
+        print(video_uid)
+        video = video_list[video_uid - 1]
+        self.listView.setPlainText(str(video.user_list))
+
+
+
+
+    def video_pre(self):
+        # TODO: 在这写预测逻辑
+        pass
 
 
 

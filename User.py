@@ -37,6 +37,7 @@ class User:
     video_list = [[], [], [], [], [], [], [], [], [], []]
 
     prefer_list = []
+    favourite = 0
 
     # 取代已观看历史结构，其中元素为视频uid
     # 创建新用户

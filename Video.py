@@ -39,6 +39,8 @@ class Video:
     # 已观看用户信息[[id，次数times，平均停留时长占比ave_len_p],[],……]
     user_list = []
 
+    # uli = ''
+
     # 投币数
     coin: int = 0
 

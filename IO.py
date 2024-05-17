@@ -47,7 +47,10 @@ def WriteToMemory(data):
             comment=int(row['comment']),
             share=int(row['share']),
             watch=int(row['watch']),
-            coin=int(row['column'])
+            coin=int(row['column']),
+            # user_list=int(row['user_list'])
+            # uli = str(row['user_list'])
+            # user_list=list(row['user_list'])
         )
         user_id_list = str(row['user_list']).split(';')
 
