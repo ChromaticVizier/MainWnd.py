@@ -5,16 +5,17 @@ import pandas as pd
 import TimeTest
 from GlobalVariable import global_obj
 
-file_path = '../new_data.csv'
+# 获取打包后 CSV 文件的路径
+file_path = '../data_1.csv'
 
 
 def take_uid(video):
     return video.uid
 
 
-@TimeTest.Krxk_Clock
+@TimeTest.clock
 def ReadFromFile():
-    from GenUsers import testVideos
+    from CreateUsers import testVideos
     import threading
     thread_list = []
     data = pd.read_csv(file_path, nrows=testVideos)
@@ -33,7 +34,7 @@ def ReadFromFile():
     global_obj.GlobalVideoList.sort(key=take_uid, reverse=False)  # 升序排列
 
 
-@TimeTest.Krxk_Clock
+@TimeTest.clock
 def WriteToMemory(data):
     from Video import Video
     for index, row in data.iterrows():
@@ -66,7 +67,7 @@ def ConvertListToStr(ul: list):
     return result
 
 
-@TimeTest.Krxk_Clock
+@TimeTest.clock
 def SaveToFile():
     df = pd.DataFrame(columns=['category', 'ID', 'length', 'comment', 'like', 'watch', 'share', 'name', 'user_list'])
     for i, video in enumerate(global_obj.GlobalVideoList):

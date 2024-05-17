@@ -5,13 +5,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QStringListModel
 
 
-class Ui_UserLoginWnd(object):
-    def setupUi(self, UserLoginWnd):
-        UserLoginWnd.setObjectName("UserLoginWnd")
-        UserLoginWnd.resize(900, 800)
-        UserLoginWnd.setMinimumSize(QtCore.QSize(900, 800))
+class Ui_UserLogin(object):
+    def setupUi(self, UserLogin):
+        UserLogin.setObjectName("UserLogin")
+        UserLogin.resize(900, 800)
+        UserLogin.setMinimumSize(QtCore.QSize(900, 800))
         # self.listToPlay = QtWidgets.QListWidget(UserLoginWnd)
-        self.listToPlay = QtWidgets.QListView(UserLoginWnd)
+        self.listToPlay = QtWidgets.QListView(UserLogin)
         self.listToPlay.setGeometry(QtCore.QRect(10, 350, 381, 331))
         self.listToPlay.setMinimumSize(QtCore.QSize(1, 0))
         font = QtGui.QFont()
@@ -20,7 +20,7 @@ class Ui_UserLoginWnd(object):
         self.listToPlay.setFont(font)
         self.listToPlay.setStyleSheet("background-color: rgb(136, 136, 136);")
         self.listToPlay.setObjectName("listToPlay")
-        self.label = QtWidgets.QLabel(UserLoginWnd)
+        self.label = QtWidgets.QLabel(UserLogin)
         self.label.setGeometry(QtCore.QRect(480, 20, 101, 41))
         font = QtGui.QFont()
         font.setFamily("黑体")
@@ -31,12 +31,12 @@ class Ui_UserLoginWnd(object):
         self.label.setFont(font)
         self.label.setStyleSheet("font: 9pt \"黑体\";")
         self.label.setObjectName("label")
-        self.textEdit = QtWidgets.QTextEdit(UserLoginWnd)
+        self.textEdit = QtWidgets.QTextEdit(UserLogin)
         self.textEdit.setGeometry(QtCore.QRect(580, 20, 221, 61))
         self.textEdit.setStyleSheet("background-color: rgb(180, 180, 180);\n"
                                     "font: 18pt \"Adobe Heiti Std\";")
         self.textEdit.setObjectName("textEdit")
-        self.listHistory = QtWidgets.QListView(UserLoginWnd)
+        self.listHistory = QtWidgets.QListView(UserLogin)
         self.listHistory.setGeometry(QtCore.QRect(470, 130, 381, 551))
         font = QtGui.QFont()
         font.setFamily("宋体")
@@ -44,7 +44,7 @@ class Ui_UserLoginWnd(object):
         self.listHistory.setFont(font)
         self.listHistory.setStyleSheet("background-color: rgb(136, 136, 136);")
         self.listHistory.setObjectName("listHistory")
-        self.label_2 = QtWidgets.QLabel(UserLoginWnd)
+        self.label_2 = QtWidgets.QLabel(UserLogin)
         self.label_2.setGeometry(QtCore.QRect(600, 80, 121, 51))
         font = QtGui.QFont()
         font.setFamily("黑体")
@@ -55,14 +55,14 @@ class Ui_UserLoginWnd(object):
         self.label_2.setFont(font)
         self.label_2.setStyleSheet("font: 15pt \"黑体\";")
         self.label_2.setObjectName("label_2")
-        self.label_3 = QtWidgets.QLabel(UserLoginWnd)
+        self.label_3 = QtWidgets.QLabel(UserLogin)
         self.label_3.setGeometry(QtCore.QRect(110, 310, 151, 51))
         font = QtGui.QFont()
         font.setFamily("隶书")
         font.setPointSize(16)
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
-        self.Query = QtWidgets.QPushButton(UserLoginWnd)
+        self.Query = QtWidgets.QPushButton(UserLogin)
         self.Query.setGeometry(QtCore.QRect(810, 20, 41, 41))
         font = QtGui.QFont()
         font.setFamily("隶书")
@@ -71,7 +71,7 @@ class Ui_UserLoginWnd(object):
         self.Query.setStyleSheet("border-image: url(:/imagees/pic4.png);")
         self.Query.setText("")
         self.Query.setObjectName("Query")
-        self.Share = QtWidgets.QPushButton(UserLoginWnd)
+        self.Share = QtWidgets.QPushButton(UserLogin)
         self.Share.setGeometry(QtCore.QRect(400, 250, 61, 61))
         font = QtGui.QFont()
         font.setFamily("隶书")
@@ -80,7 +80,7 @@ class Ui_UserLoginWnd(object):
         self.Share.setStyleSheet("border-image: url(:/imagees/pic8.png);")
         self.Share.setText("")
         self.Share.setObjectName("Share")
-        self.Comment = QtWidgets.QPushButton(UserLoginWnd)
+        self.Comment = QtWidgets.QPushButton(UserLogin)
         self.Comment.setGeometry(QtCore.QRect(400, 90, 61, 61))
         font = QtGui.QFont()
         font.setFamily("隶书")
@@ -89,7 +89,7 @@ class Ui_UserLoginWnd(object):
         self.Comment.setStyleSheet("border-image: url(:/imagees/pic6.png);")
         self.Comment.setText("")
         self.Comment.setObjectName("Comment")
-        self.Praise = QtWidgets.QPushButton(UserLoginWnd)
+        self.Praise = QtWidgets.QPushButton(UserLogin)
         self.Praise.setGeometry(QtCore.QRect(400, 20, 61, 61))
         font = QtGui.QFont()
         font.setFamily("隶书")
@@ -98,7 +98,7 @@ class Ui_UserLoginWnd(object):
         self.Praise.setStyleSheet("border-image: url(:/imagees/pic5.png);")
         self.Praise.setText("")
         self.Praise.setObjectName("Praise")
-        self.Coin = QtWidgets.QPushButton(UserLoginWnd)
+        self.Coin = QtWidgets.QPushButton(UserLogin)
         self.Coin.setGeometry(QtCore.QRect(400, 170, 61, 61))
         font = QtGui.QFont()
         font.setFamily("隶书")
@@ -107,15 +107,15 @@ class Ui_UserLoginWnd(object):
         self.Coin.setStyleSheet("border-image: url(:/imagees/pic7.png);")
         self.Coin.setText("")
         self.Coin.setObjectName("Coin")
-        self.graphicsView = QtWidgets.QGraphicsView(UserLoginWnd)
+        self.graphicsView = QtWidgets.QGraphicsView(UserLogin)
         self.graphicsView.setGeometry(QtCore.QRect(-5, 1, 971, 791))
         self.graphicsView.setStyleSheet("background-color: rgb(67, 67, 67);")
         self.graphicsView.setObjectName("graphicsView")
-        self.graphicsView_2 = QtWidgets.QGraphicsView(UserLoginWnd)
+        self.graphicsView_2 = QtWidgets.QGraphicsView(UserLogin)
         self.graphicsView_2.setGeometry(QtCore.QRect(10, 20, 381, 281))
         self.graphicsView_2.setStyleSheet("border-image: url(:/imagees/pic9.png);")
         self.graphicsView_2.setObjectName("graphicsView_2")
-        self.graphicsView_3 = QtWidgets.QGraphicsView(UserLoginWnd)
+        self.graphicsView_3 = QtWidgets.QGraphicsView(UserLogin)
         self.graphicsView_3.setGeometry(QtCore.QRect(470, 61, 381, 191))
         self.graphicsView_3.setStyleSheet("background-image: url(:/imagees/background4.png);")
         self.graphicsView_3.setObjectName("graphicsView_3")
@@ -134,13 +134,13 @@ class Ui_UserLoginWnd(object):
         self.Coin.raise_()
         self.graphicsView_2.raise_()
 
-        self.retranslateUi(UserLoginWnd)
+        self.retranslateUi(UserLogin)
         self.Query.clicked.connect(self.OnQuery)  # type: ignore
         self.Praise.clicked.connect(self.OnPraise)  # type: ignore
         self.Comment.clicked.connect(self.OnComment)  # type: ignore
         self.Share.clicked.connect(self.OnShare)  # type: ignore
         self.Coin.clicked.connect(self.OnCoin)  # type: ignore
-        QtCore.QMetaObject.connectSlotsByName(UserLoginWnd)
+        QtCore.QMetaObject.connectSlotsByName(UserLogin)
 
         self.listToPlay.clicked.connect(self.checkPlayItem)
         self.listHistory.clicked.connect(self.checkHistoryItem)
@@ -150,10 +150,10 @@ class Ui_UserLoginWnd(object):
 
     def retranslateUi(self, UserLoginWnd):
         _translate = QtCore.QCoreApplication.translate
-        UserLoginWnd.setWindowTitle(_translate("UserLoginWnd", "用户测试"))
-        self.label.setText(_translate("UserLoginWnd", "<html><head/><body><p><span style=\" font-size:18pt; color:#b0b0b0;\">用户ID：</span></p></body></html>"))
-        self.label_2.setText(_translate("UserLoginWnd", "<html><head/><body><p><span style=\" color:#ce9738;\">播放历史</span></p></body></html>"))
-        self.label_3.setText(_translate("UserLoginWnd", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        UserLoginWnd.setWindowTitle(_translate("UserLogin", "用户测试"))
+        self.label.setText(_translate("UserLogin", "<html><head/><body><p><span style=\" font-size:18pt; color:#b0b0b0;\">用户ID：</span></p></body></html>"))
+        self.label_2.setText(_translate("UserLogin", "<html><head/><body><p><span style=\" color:#ce9738;\">播放历史</span></p></body></html>"))
+        self.label_3.setText(_translate("UserLogin", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'隶书\'; font-size:16pt; font-weight:400; font-style:normal;\">\n"

@@ -8,8 +8,8 @@ def take_uid(user):
     return user.uid
 
 
-@TimeTest.Krxk_Clock
-def GenUsers():
+@TimeTest.clock
+def CreateUsers():
     import threading
     # print('begin generate users')
     total_size = 20000  # 指明要生成的用户数
@@ -17,7 +17,7 @@ def GenUsers():
     group_num = int(total_size / group_size) + 1
     thread_list = []
     for i in range(group_num):
-        t = threading.Thread(target=HelpGenUsers, args=(i * group_size, (i + 1) * group_size))
+        t = threading.Thread(target=HelpCreateUsers, args=(i * group_size, (i + 1) * group_size))
         thread_list.append(t)
         t.start()
 
@@ -28,8 +28,8 @@ def GenUsers():
     # print('generate users done')
 
 
-@TimeTest.Krxk_Clock
-def HelpGenUsers(start_uid, end_uid):
+@TimeTest.clock
+def HelpCreateUsers(start_uid, end_uid):
     from User import User
     import random
     for i in range(start_uid, end_uid):

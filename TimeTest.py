@@ -1,6 +1,6 @@
 # coding=utf-8
 
-def Krxk_Clock(fun):
+def clock(fun):
     def wrapper(*args, **kwargs):
         import time
         start_time = time.time()

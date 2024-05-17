@@ -87,7 +87,7 @@ class User:
                 return n[1]
         return 0
 
-    @TimeTest.Krxk_Clock
+    @TimeTest.clock
     def HelpRefreshWeight(self):  # 重新计算权重
         self.temp_play_list = []
         from SortList import VideoListSort
@@ -98,7 +98,7 @@ class User:
                 break
         VideoListSort(self.temp_play_list)
 
-    @TimeTest.Krxk_Clock
+    @TimeTest.clock
     def RefreshWeight(self):  # 刷新播放列表
         self.to_play_list = None  # 释放内存
         self.to_play_list = self.temp_play_list

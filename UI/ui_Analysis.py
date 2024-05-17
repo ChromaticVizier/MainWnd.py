@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'AnalysisWnd.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -11,15 +10,15 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QStandardItem, QStandardItemModel
 
-class Ui_AnalysisWnd(object):
-    def setupUi(self, AnalysisWnd):
-        AnalysisWnd.setObjectName("AnalysisWnd")
-        AnalysisWnd.resize(570, 567)
-        self.tableView = QtWidgets.QTableView(AnalysisWnd)
+class Ui_Analysis(object):
+    def setupUi(self, Analysis):
+        Analysis.setObjectName("Analysis")
+        Analysis.resize(570, 567)
+        self.tableView = QtWidgets.QTableView(Analysis)
         self.tableView.setGeometry(QtCore.QRect(10, 90, 551, 411))
         self.tableView.setStyleSheet("background-color: rgb(165, 165, 165);")
         self.tableView.setObjectName("tableView")
-        self.comboBox = QtWidgets.QComboBox(AnalysisWnd)
+        self.comboBox = QtWidgets.QComboBox(Analysis)
         self.comboBox.setGeometry(QtCore.QRect(140, 20, 131, 51))
         font = QtGui.QFont()
         font.setFamily("黑体")
@@ -32,7 +31,7 @@ class Ui_AnalysisWnd(object):
 "font: 16pt \"黑体\";")
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItems(["工作阶段", "职业", "性别", "地域"])
-        self.label = QtWidgets.QLabel(AnalysisWnd)
+        self.label = QtWidgets.QLabel(Analysis)
         self.label.setGeometry(QtCore.QRect(30, 20, 101, 51))
         font = QtGui.QFont()
         font.setFamily("黑体")
@@ -43,7 +42,7 @@ class Ui_AnalysisWnd(object):
         self.label.setFont(font)
         self.label.setStyleSheet("font: 16pt \"黑体\";")
         self.label.setObjectName("label")
-        self.RunAnalysis = QtWidgets.QPushButton(AnalysisWnd)
+        self.RunAnalysis = QtWidgets.QPushButton(Analysis)
         self.RunAnalysis.setGeometry(QtCore.QRect(280, 20, 51, 51))
         font = QtGui.QFont()
         font.setFamily("隶书")
@@ -52,7 +51,7 @@ class Ui_AnalysisWnd(object):
         self.RunAnalysis.setStyleSheet("border-image: url(:/imagees/pic10.png);")
         self.RunAnalysis.setText("")
         self.RunAnalysis.setObjectName("RunAnalysis")
-        self.graphicsView = QtWidgets.QGraphicsView(AnalysisWnd)
+        self.graphicsView = QtWidgets.QGraphicsView(Analysis)
         self.graphicsView.setGeometry(QtCore.QRect(0, 0, 571, 571))
         self.graphicsView.setStyleSheet("border-image: url(:/imagees/background3.png);")
         self.graphicsView.setObjectName("graphicsView")
@@ -62,9 +61,9 @@ class Ui_AnalysisWnd(object):
         self.label.raise_()
         self.RunAnalysis.raise_()
 
-        self.retranslateUi(AnalysisWnd)
+        self.retranslateUi(Analysis)
         self.RunAnalysis.clicked.connect(self.OnRunAnalysis) # type: ignore
-        QtCore.QMetaObject.connectSlotsByName(AnalysisWnd)
+        QtCore.QMetaObject.connectSlotsByName(Analysis)
 
     def retranslateUi(self, AnalysisWnd):
         _translate = QtCore.QCoreApplication.translate

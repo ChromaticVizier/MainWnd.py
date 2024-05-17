@@ -14,13 +14,13 @@ QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
 
 
 import ui_welcome
-import ui_MainWnd
+import ui_LoginInterface
 
 #////////////////
 
 #import welcome
-import MainWnd
-from GenUsers import GenUsers
+import ui_LoginInterface
+from CreateUsers import CreateUsers
 import configparser
 
 # push test
@@ -39,7 +39,7 @@ if __name__ == '__main__':
     import threading
 
     th1 = threading.Thread(target=IO.ReadFromFile, args=())
-    th2 = threading.Thread(target=GenUsers, args=())
+    th2 = threading.Thread(target=CreateUsers, args=())
 
     app = QtWidgets.QApplication(sys.argv)
     widget_wel = QtWidgets.QWidget()
@@ -49,9 +49,6 @@ if __name__ == '__main__':
     welcome_wnd = ui_welcome.Ui_Welcome()
     welcome_wnd.setupUi(widget_wel)
     widget_wel.show()
-    from ReloadIcon import SetWndIcon
-
-    SetWndIcon(widget_wel)  # 增加icon图标
 
     th3.start()
     app.exec_()  # 为欢迎页启动消息循环
@@ -61,11 +58,9 @@ if __name__ == '__main__':
 
     #  进入主界面
     widget = QtWidgets.QWidget()
-    main_wnd = ui_MainWnd.Ui_MainWnd()
-    main_wnd.setupUi(widget)
+    loginInterface = ui_LoginInterface.Ui_LoginInterface()
+    loginInterface.setupUi(widget)
     widget.show()
-
-    SetWndIcon(widget)  # 增加icon图标
 
     exit_code = app.exec_()
 

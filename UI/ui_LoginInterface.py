@@ -9,21 +9,21 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import ui_UserLoginWnd_new
+import ui_UserLogin
 
-# import UserLoginWnd
-import ui_VideoLoginWnd
-import ui_AnalysisWnd
 
-class Ui_MainWnd(object):
-    def setupUi(self, MainWnd):
-        MainWnd.setObjectName("MainWnd")
-        MainWnd.resize(591, 591)
-        self.graphicsView = QtWidgets.QGraphicsView(MainWnd)
+import ui_VideoLogin
+import ui_Analysis
+
+class Ui_LoginInterface(object):
+    def setupUi(self, LoginInterface):
+        LoginInterface.setObjectName("MainWnd")
+        LoginInterface.resize(591, 591)
+        self.graphicsView = QtWidgets.QGraphicsView(LoginInterface)
         self.graphicsView.setGeometry(QtCore.QRect(0, 0, 591, 591))
         self.graphicsView.setStyleSheet("border-image: url(:/imagees/background3.png);")
         self.graphicsView.setObjectName("graphicsView")
-        self.horizontalLayoutWidget = QtWidgets.QWidget(MainWnd)
+        self.horizontalLayoutWidget = QtWidgets.QWidget(LoginInterface)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(20, 130, 560, 291))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
@@ -84,11 +84,11 @@ class Ui_MainWnd(object):
         self.verticalLayout_2.addWidget(self.Analysis)
         self.horizontalLayout.addLayout(self.verticalLayout_2)
 
-        self.retranslateUi(MainWnd)
+        self.retranslateUi(LoginInterface)
         self.UL.clicked.connect(self.UserLogin) # type: ignore
         self.VL.clicked.connect(self.VideoLogin) # type: ignore
         self.Analysis.clicked.connect(self.AnalysisFun) # type: ignore
-        QtCore.QMetaObject.connectSlotsByName(MainWnd)
+        QtCore.QMetaObject.connectSlotsByName(LoginInterface)
 
     def retranslateUi(self, MainWnd):
         _translate = QtCore.QCoreApplication.translate
@@ -99,27 +99,20 @@ class Ui_MainWnd(object):
 
     def UserLogin(self):
         self.widget_user = QtWidgets.QWidget()
-        # self.user_login_wnd = UserLoginWnd.Ui_UserLoginWnd()
-        self.user_login_wnd = ui_UserLoginWnd_new.Ui_UserLoginWnd()
-        self.user_login_wnd.setupUi(self.widget_user)
-        from ReloadIcon import SetWndIcon
-        SetWndIcon(self.widget_user)
+        self.user_login = ui_UserLogin.Ui_UserLogin()
+        self.user_login.setupUi(self.widget_user)
         self.widget_user.show()
 
     def VideoLogin(self):
         self.widget_video = QtWidgets.QWidget()
-        self.video_login_wnd = ui_VideoLoginWnd.Ui_VideoLoginWnd()
-        self.video_login_wnd.setupUi(self.widget_video)
-        from ReloadIcon import SetWndIcon
-        SetWndIcon(self.widget_video)
+        self.video_login = ui_VideoLogin.Ui_VideoLogin()
+        self.video_login.setupUi(self.widget_video)
         self.widget_video.show()
 
     def AnalysisFun(self):
         self.widget_analysis = QtWidgets.QWidget()
-        self.analysis_wnd = ui_AnalysisWnd.Ui_AnalysisWnd()
-        self.analysis_wnd.setupUi(self.widget_analysis)
-        from ReloadIcon import SetWndIcon
-        SetWndIcon(self.widget_analysis)
+        self.analysis = ui_Analysis.Ui_Analysis()
+        self.analysis.setupUi(self.widget_analysis)
         self.widget_analysis.show()
 import pic_rc
 
