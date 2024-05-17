@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QStringListModel
-
+#。。。
 from GlobalVariable import global_obj
 
 user_list = global_obj.GlobalUserList  # 全局用户表
