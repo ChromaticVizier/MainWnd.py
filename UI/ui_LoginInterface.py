@@ -15,6 +15,8 @@ import ui_UserLogin
 import ui_VideoLogin
 import ui_Analysis
 
+import Additional_function
+
 class Ui_LoginInterface(object):
     def setupUi(self, LoginInterface):
         LoginInterface.setObjectName("MainWnd")
@@ -114,5 +116,11 @@ class Ui_LoginInterface(object):
         self.analysis = ui_Analysis.Ui_Analysis()
         self.analysis.setupUi(self.widget_analysis)
         self.widget_analysis.show()
+
+        self.widget_additional = QtWidgets.QMainWindow()
+        self.additional = Additional_function.Ui_MainWindow()
+        self.additional.setupUi(self.widget_additional)
+        self.widget_additional.show()
+
 import pic_rc
 

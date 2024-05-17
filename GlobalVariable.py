@@ -23,6 +23,8 @@ class GlobalVariable:
         self.GlobalUserList = []
         self.InitWeight = InitWeightMatrix.InitWeight()  # 初始权重具有全局性
 
+        self.user_cluster_list = [[], [], [], [], [], [], [], [], [], []]  # 聚类结果存在这里
+
     def GetTotalUserCount(self):
         return len(self.GlobalUserList)
 

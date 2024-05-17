@@ -36,6 +36,8 @@ class User:
     # 已观看视频信息[[电视：[uid，次数times,平均停留时长占比ave_len_p],[uid,次数，平均停留时长占比ave_len_p]，……],[电影],……]
     video_list = [[], [], [], [], [], [], [], [], [], []]
 
+    prefer_list = []
+
     # 取代已观看历史结构，其中元素为视频uid
     # 创建新用户
     def __init__(self, work_phase: int, gender: int, job: int, location: int, uid: int):
