@@ -70,6 +70,9 @@ class GlobalVariable:
                 result.append(user)
         return result
 
+    def get_user_li(self):
+        return self.GlobalUserList
+
 
 global_obj = GlobalVariable()  # 全局变量
 refresh_frequency = 100  # 用户刷n条视频后重新计算权重
