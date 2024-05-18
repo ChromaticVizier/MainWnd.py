@@ -98,7 +98,6 @@ class Ui_MainWindow(object):
     def user_clu(self):
         query_uid = int(self.lineEdit.text())
         same_hobby_list = []
-
         target_user = user_list[query_uid - 1]
         # print(target_favourite)
         target_hobby = target_user.video_list
@@ -106,10 +105,7 @@ class Ui_MainWindow(object):
         for i in range(10):
             for video in target_hobby[i]:
                 sum_list[i] += video[1]
-        # print(sum_list)
-        # print(np.argmax(sum_list))
         target_user_hobby = np.argmax(sum_list)
-
         for user in user_list:
             usr_sumlist = np.zeros(10)
             for i in range(10):
@@ -117,20 +113,22 @@ class Ui_MainWindow(object):
                     usr_sumlist[i] += video[1]
             if target_user_hobby == np.argmax(usr_sumlist):
                 same_hobby_list.append(user.uid)
-
             if len(same_hobby_list) >= 10:
                 break
-
         self.listView.setPlainText(str(same_hobby_list))
 
-    def video_clu(self): #视频聚类，把喜欢看这个视频的用户ID列出来
-        video_uid = int(self.lineEdit.text())
-        print(video_uid)
-        video = video_list[video_uid - 1]
-        self.listView.setPlainText(str(video.user_list))
+    def video_clu(self):
+        target_video_uid = int(self.lineEdit.text())
+        target_video = video_list[target_video_uid - 1]
 
-
-
+        target_user_list = target_video.user_list
+        cluster_list = []
+        for video in video_list:
+            if len(list(set(video.user_list) & set(target_user_list))) != 0:
+                cluster_list.append(video.uid)
+            if len(cluster_list) >= 10:
+                break
+        self.listView.setPlainText(str(cluster_list))
 
     def video_pre(self):
         video_uid = int(self.lineEdit.text())
