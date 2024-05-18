@@ -1,3 +1,4 @@
+import numpy as np
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QStringListModel
 #。。。
@@ -94,23 +95,31 @@ class Ui_MainWindow(object):
         self.video_cluster.setText(_translate("MainWindow", "视频聚类"))
         self.video_predict.setText(_translate("MainWindow", "热度推测"))
 
-    def user_clu(self):#对于列表中每个用户观看过的视频，video_class是某一类视频的集合（如电视），其中每个视频的
-        for user in user_list:
-            for video_class in user.video_list:
-                sum_screen_time = 0
-                for video in video_class:
-                    sum_screen_time += video[1]
-                user.prefer_list.append(sum_screen_time)
-
-            user.favourite = user.prefer_list.index(max(user.prefer_list))
-
+    def user_clu(self):
         query_uid = int(self.lineEdit.text())
         same_hobby_list = []
 
+        target_user = user_list[query_uid - 1]
+        # print(target_favourite)
+        target_hobby = target_user.video_list
+        sum_list = np.zeros(10)
+        for i in range(10):
+            for video in target_hobby[i]:
+                sum_list[i] += video[1]
+        # print(sum_list)
+        # print(np.argmax(sum_list))
+        target_user_hobby = np.argmax(sum_list)
+
         for user in user_list:
-            # if user.favourite == user_list[query_uid].favourite:
-            if user.favourite == user_list[query_uid].favourite and user.favourite != 0:
-                same_hobby_list.append(user)
+            usr_sumlist = np.zeros(10)
+            for i in range(10):
+                for video in user.video_list[i]:
+                    usr_sumlist[i] += video[1]
+            if target_user_hobby == np.argmax(usr_sumlist):
+                same_hobby_list.append(user.uid)
+
+            if len(same_hobby_list) >= 10:
+                break
 
         self.listView.setPlainText(str(same_hobby_list))
 
